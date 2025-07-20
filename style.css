@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #1e1b4b, #6b21a8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+.app {
+  padding: 1rem;
+}
+button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: #facc15;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: #1e1b4b;
+}
+.card {
+  background: white;
+  color: black;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+}
+.hidden {
+  display: none;
+}
+img {
+  width: 100%;
+  border-radius: 1rem;
+}
