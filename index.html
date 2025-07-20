@@ -2,17 +2,91 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tarocchi di Fede</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Matto - Tarocchi di Fede</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #3a0ca3, #7209b7);
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+    .card-container {
+      perspective: 1000px;
+      width: 300px;
+      margin: auto;
+    }
+    .flip-card {
+      width: 100%;
+      height: 450px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+    .flipped {
+      transform: rotateY(180deg);
+    }
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    .front {
+      background: #fff;
+    }
+    .back {
+      background: #fff;
+      transform: rotateY(180deg);
+    }
+    .card-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .title {
+      margin-top: 1.5em;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 1em;
+      background: gold;
+      border: none;
+      border-radius: 20px;
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div class="app">
-    <h1>✨ Benvenuta nei Tarocchi di Fede, uno specchio per la tua anima ✨</h1>
-    <button onclick="drawCard()">Pesca una Carta</button>
-    <div id="cardContainer" class="card hidden">
-      <img id="cardImage" src="Matto front.png" alt="Il Matto">
-      <h2>Il Matto </h2>
-      <p class="quote">"Abbraccia l’ignoto con cuore aperto"</p>
-      <p class="keywords">Inizio – Libertà – Leggerezza</p>
-      <p class="message">Lascia che l’anima ti guidi, n
+  <h1>✨ Benvenuta nei Tarocchi di Fede ✨</h1>
+  <div class="card-container">
+    <div id="flipCard" class="flip-card">
+      <div class="card-side front">
+        <img src="matto-front.png" alt="Il Matto - fronte" />
+      </div>
+      <div class="card-side back">
+        <img src="matto-back.png" alt="Il Matto - retro" />
+      </div>
+    </div>
+  </div>
+  <div class="title">Il Matto (0)</div>
+  <button onclick="toggleCard()">Gira la Carta</button>
+
+  <script>
+    function toggleCard() {
+      document.getElementById('flipCard').classList.toggle('flipped');
+    }
+  </script>
+</body>
+</html>
+
+
+Ecco il codice HTML completo per mostrare **prima la carta frontale
+
